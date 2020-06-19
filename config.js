@@ -1,3 +1,4 @@
+require('dotenv').config();
 const DBNAME = 'ptax-api';
 module.exports= {
    PORT: 5555,
