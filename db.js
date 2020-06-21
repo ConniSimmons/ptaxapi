@@ -13,7 +13,7 @@ module.exports = function () {
     mongoose.connect(dbUri, dbOptions);
 
     mongoose.connection.on('connected', () => {
-        console.log('Successfully connected to MongoDB.');
+        console.log('Successfully connected to MongoDB!');
     });
 
     mongoose.connection.on('error', (err) => {

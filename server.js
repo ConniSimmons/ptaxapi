@@ -18,6 +18,7 @@ const server = express();
 
 //middleware stuff:
 server.use(express.json());
+server.use(cors());
 
 //tell the database to actually connect:
 db();
@@ -29,18 +30,18 @@ server.use("/", routerGen(Ptaxlist));
 // get constants from my settings file
 let { PORT, DBNAME } = require("./config");
 
-server.use(cors());
-
 server.get("/products/:id", function (req, res, next) {
   res.json({ msg: "This is CORS-enabled for all origins!" });
 });
 
 // logger, linstener
-const logger = (req, res, next) => {
-  console.log(req.method, req.path);
-  next();
+const requestLogger = (req, res, next) =>
+{
+        const now = new Date();
+        console.log(`${now}:::> Incoming ${req.method} request to ${PORT}.`)
+        next();
 }
-server.use(logger);
+server.use(requestLogger);
 server.use(express.json());
 
 //listener
