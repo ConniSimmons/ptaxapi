@@ -46,7 +46,7 @@ server.use(requestLogger);
 server.use(express.json());
 
 //listener
-server.listen(5555, (err) => {
+server.listen(port, (err) => {
   if (err) {
     console.log("Error starting server: ", err);
   }
