@@ -10,7 +10,15 @@ const dbOptions = {
 }
 
 module.exports = function () {
-    mongoose.connect(dbUri, dbOptions);
+    mongoose.connect(dbUri, dbOptions)
+    .then((result) =>
+    {
+        return result;
+    })
+    .catch((err) =>
+    {
+        console.log('Error connecting to db: ', err);
+    });
 
     mongoose.connection.on('connected', () => {
         console.log('Successfully connected to MongoDB!');
