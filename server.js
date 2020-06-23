@@ -33,7 +33,11 @@ let { PORT, DBNAME } = require("./config");
 
 server.get("/products/:id", function (req, res, next) {
   res.json({ msg: "This is CORS-enabled for all origins!" });
+
 });
+server.get("/", function (req, res, next) {
+  res.json({ msg: "Server is working."});
+})
 
 // logger, linstener
 const requestLogger = (req, res, next) =>
