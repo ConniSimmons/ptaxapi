@@ -2,43 +2,61 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ptaxlistSchema = new Schema({
+const prodsetSchema = new Schema({
     category: {
         type: String,
         unique: false,
         required: true,
         ref: "category"
     }, 
+    title: {
+        type: String,
+        unique: false,
+        required: true,
+        ref: "title"
+    }, 
     fprod: {
         type: String,
         unique: false,
         required: true,
-        ref: "fprod"
+        ref: "f-product"
     }, 
         fprice: {
         type: String,
         unique: false,
         required: true,
-        ref: "fprice"
+        ref: "f-price"
     }, 
         mprod: {
         type: String,
         unique: false,
         required: true,
-        ref: "mprod"
+        ref: "m-product"
     }, 
         mprice: {
         type: String,
         unique: false,
         required: true,
-        ref: "mprice"
+        ref: "m-price"
     }, 
         nettax: {
         type: String,
         unique: false,
         required: true,
-        ref: "nettax"
-    }
+        ref: "net tax"
+    },
+        taxpcnt: {
+        type: String,
+        unique: false,
+        required: true,
+        ref: "percent"
+    },
+        pic: {
+        type: String,
+        unique: false,
+        required: true,
+        ref: "pix"
+        }
 });
 
-module.exports = ptaxlistSchema;
+module.exports = prodsetSchema;

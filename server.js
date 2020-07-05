@@ -8,7 +8,7 @@ const argon2 = require("argon2");
 
 // import all of the models (dao)
 const Mailinglist = require("./api/mailinglist/mailinglist.dao");
-const Ptaxlist = require("./api/ptaxlist/ptaxlist.dao");
+const Prodset = require("./api/prodset/prodset.dao");
 
 //import my generic route generator files
 const routerGen = require("./api/router");
@@ -26,7 +26,7 @@ db();
 
 // tell the app to use our api routes
 server.use("/", routerGen(Mailinglist));
-server.use("/", routerGen(Ptaxlist));
+server.use("/", routerGen(Prodset));
 
 // get constants from my settings file
 let { PORT, DBNAME } = require("./config");

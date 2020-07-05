@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const schema = require('./ptaxlist.model');
+const schema = require('./prodset.model');
 
 schema.statics = {
     create: function(data, callback)
@@ -21,5 +21,5 @@ schema.statics = {
     }
 }
 
-const model = mongoose.model('Ptaxlist', schema);
+const model = mongoose.model('prodset', schema);
 module.exports = model;
