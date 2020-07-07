@@ -9,11 +9,11 @@ const prodsetSchema = new Schema({
         required: true,
         ref: "category"
     }, 
-    title: {
+    product: {
         type: String,
         unique: false,
         required: true,
-        ref: "title"
+        ref: "product"
     }, 
     fprod: {
         type: String,
